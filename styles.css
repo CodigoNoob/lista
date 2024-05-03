@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     outline: none;
 }
 
@@ -13,7 +15,7 @@ body {
 
 .container {
     background-color: #d1d1d1;
-    width: 500px;
+    max-width: 500px;
     border-radius: 10px;
     padding: 20px;
     margin: 100px auto 0;
@@ -22,36 +24,37 @@ body {
 .input-task {
     border: none;
     border-radius: 5px;
-    width: 300px;
+    width: 100%; /* Alterado para largura de 100% */
     height: 40px;
     padding-left: 10px;
+    margin-bottom: 10px; /* Adicionado espaçamento inferior */
 }
 
 .button-add-task {
     border: none;
     border-radius: 5px;
     height: 40px;
-    background-color: #003329;
+    width: calc(100% - 10px); /* Alterado para largura de 100% com margem */
+    background-color: rgba(0, 51, 41, 0.5);
     color: #ffffff;
     font-size: 17px;
-    padding: 0 15px;
-    float: right;
+    padding: 0 5px; /* Reduzido o preenchimento horizontal */
     cursor: pointer;
     font-weight: 700;
 }
 
 .button-add-task:hover {
-    opacity: 0.8;
+    background-color: rgba(0, 51, 41, 0.7);
 }
 
 .button-add-task:active {
-    opacity: 0.6;
+    background-color: rgba(0, 51, 41, 0.3);
 }
 
 .list-tasks {
     width: 100%;
     list-style: none;
-    margin-top: 30px;
+    margin-top: 20px; /* Reduzido o espaçamento superior */
 }
 
 .task {
@@ -80,4 +83,20 @@ img {
 .done {
     background-color: #8fac55;
     text-decoration: line-through;
+}
+
+/* Media query para responsividade */
+@media screen and (max-width: 600px) {
+    .container {
+        width: 90%; /* Alterado para 90% da largura da tela */
+    }
+
+    .button-add-task {
+        width: 100%; /* Botão agora ocupa 100% da largura */
+        margin-top: 10px; /* Adicionado espaçamento superior */
+    }
+
+    .list-tasks {
+        margin-top: 15px; /* Reduzido o espaçamento superior */
+    }
 }
